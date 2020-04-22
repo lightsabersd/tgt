@@ -1,0 +1,19 @@
+---
+micronaut:
+  application:
+    name: target
+  http:
+    services:
+      redsky:
+        urls:
+          - "https://redsky.target.com"
+        read-timeout: 3s
+        path: "/v2/pdp/tcin/{id}?excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics"
+---
+mongodb:
+  uri: mongodb://localhost:27017
+
+---
+hystrix:
+  stream:
+    enabled: false
